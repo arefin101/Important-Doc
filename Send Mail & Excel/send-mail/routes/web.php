@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/send-mail', function () {
-    $details = [
-        'title' => 'Mail From Surfside media',
-        'body' => 'This is from testing mail using smtp'
-    ];
-    \Mail::to('alexmarfee101@gmail.com')->send(new \App\Mail\TestMail($details));
-    echo "Email Has Been Sent";
-});
 
-
+Route::get('/send-mail', [MailController::class, 'sendMail'])->name('sendMail');
+Route::post('/send-mail', [MailController::class, 'sentMail'])->name('sentMail');
 
 
 Route::get('/export',[DemoController::class, 'export'])->name('export');
