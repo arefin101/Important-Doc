@@ -67,7 +67,7 @@ class ExportDataTable extends DataTable
             Column::make('id'),
             Column::make('firstName'),
             Column::make('lastName'),
-            Column::make('create_at'),
+            Column::make('created_at'),
             Column::make('updated_at')
         ];
     }
