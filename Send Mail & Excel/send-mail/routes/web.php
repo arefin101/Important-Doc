@@ -26,4 +26,4 @@ Route::post('/send-mail', [MailController::class, 'sentMail'])->name('sentMail')
 
 Route::get('/export',[DemoController::class, 'export'])->name('export');
 Route::get('/importExportView',[DemoController::class, 'importExportView']);
-Route::post('/import',[DemoController::class, 'import'])->name('import');;
+Route::post('/import',[DemoController::class, 'import'])->name('import');
