@@ -19,5 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/datatable', [ DataController::class, 'index' ])->name('datatable');
+Route::get('/load', [ DataController::class, 'load' ])->name('load');
+Route::get('/load2', [ DataController::class, 'load2' ])->name('load2');
 
 
